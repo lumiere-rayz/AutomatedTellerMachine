@@ -3,71 +3,71 @@
 }
 
 
-<div class="row">
-    <div class="col-md-6 margin-top-20">
-        <a href="#" class="btn btn-primary btn-large btn-block">
-            <span class="glyphicon glyphicon-circle-arrow-down"></span>
-            Withdrawal
-        </a>
-        <a href="#" class="btn btn-primary btn-large btn-block">
-            <span class="glyphicon glyphicon-flash"></span>
-            Quick cash $100
-        </a>
-        <a href="@Url.Action("Details","CheckingAccount")" class="btn btn-primary btn-large btn-block">
-            <span class="glyphicon glyphicon-question-sign"></span>
-            Balance Inquiry
-        </a>
-    </div>
-    <div class="col-md-6 margin-top-20">
-        <a href="#" class="btn btn-primary btn-large btn-block">
-            <span class="glyphicon glyphicon-print"></span>
-            Print Statement
-        </a>
-        <a href="#" class="btn btn-primary btn-large btn-block">
-            <span class="glyphicon glyphicon-transfer"></span>
-            Transfer Funds
-        </a>
-        <a href="@Url.Action("Deposit", "Transaction", new {checkingAccountId = ViewBag.CheckingAccountId})" class="btn btn-primary btn-large btn-block"><span class="glyphicon glyphicon-circle-arrow-up"></span> Deposit</a>
-    </div>
+    <div class="row">
+        <div class="col-md-6 margin-top-20">
+            <a href="#" class="btn btn-primary btn-large btn-block">
+                <span class="glyphicon glyphicon-circle-arrow-down"></span>
+                Withdrawal
+            </a>
+            <a href="#" class="btn btn-primary btn-large btn-block">
+                <span class="glyphicon glyphicon-flash"></span>
+                Quick cash $100
+            </a>
+            <a href="@Url.Action("Details","CheckingAccount")" class="btn btn-primary btn-large btn-block">
+                <span class="glyphicon glyphicon-question-sign"></span>
+                Balance Inquiry
+            </a>
+        </div>
+        <div class="col-md-6 margin-top-20">
+            <a href="#" class="btn btn-primary btn-large btn-block">
+                <span class="glyphicon glyphicon-print"></span>
+                Print Statement
+            </a>
+            <a href="#" class="btn btn-primary btn-large btn-block">
+                <span class="glyphicon glyphicon-transfer"></span>
+                Transfer Funds
+            </a>
+            <a href="@Url.Action("Deposit", "Transaction", new {checkingAccountId = ViewBag.CheckingAccountId})" class="btn btn-primary btn-large btn-block"><span class="glyphicon glyphicon-circle-arrow-up"></span> Deposit</a>
+        </div>
+        @ViewBag.Pin
 
-</div>
 
-@*
-
+        @*
+                <div class="col-md-4">
+                <h2>Register</h2>
+                <p>
+                   Open an account with us
+                </p>
+                <p>@Html.ActionLink("Register", "Register" , "Account", null , new { @class = "btn btn-default" })</p>
+            </div>
             <div class="col-md-4">
-            <h2>Register</h2>
-            <p>
-               Open an account with us
-            </p>
-            <p>@Html.ActionLink("Register", "Register" , "Account", null , new { @class = "btn btn-default" })</p>
-        </div>
-        <div class="col-md-4">
-            <h2>Log In</h2>
-            <p>Access your existing account.</p>
-            <p>@Html.ActionLink("Log in", "Login", "Account", null, new { @class = "btn btn-default" })</p>
-        </div>
+                <h2>Log In</h2>
+                <p>Access your existing account.</p>
+                <p>@Html.ActionLink("Log in", "Login", "Account", null, new { @class = "btn btn-default" })</p>
+            </div>
 
 
-    You are using @Request.Browser.Browser, and that's ok! Email us at ejiolawale4@gmail.com if you have problems. or send us a tweet @@ejiolawale
-    @{var amounts = new List<Decimal> { 100, 25.50m, -40, 275.99m };
+        You are using @Request.Browser.Browser, and that's ok! Email us at ejiolawale4@gmail.com if you have problems. or send us a tweet @@ejiolawale
+        @{var amounts = new List<Decimal> { 100, 25.50m, -40, 275.99m };
 
-    }
-
-    <ul>
-        @foreach(decimal amount in amounts)
-        {
-            <li>@formatAmount(amount)</li>
-            <text> plain text</text>
-            @:plain text
         }
-    </ul>
+
+        <ul>
+            @foreach(decimal amount in amounts)
+            {
+                <li>@formatAmount(amount)</li>
+                <text> plain text</text>
+                @:plain text
+            }
+        </ul>
+        *@
         @helper formatAmount(decimal amount)
         {
             var color = "green";
             if (amount < 0)
-    {
-            color = "red";
-    }
-    <span style="color:@color">@string.Format("{0:c}", amount)</span>
+            {
+                color = "red";
+            }
+            <span style="color:@color">@string.Format("{0:c}", amount)</span>
         }
-*@
+    </div>

@@ -16,6 +16,10 @@ namespace AutomatedTellerMachine.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        // another way of adding addition information to the identity object is by adding property to the applicationuser class
+        //...if you want every user to have a pin for addintional security we can add a pin property here and run update-Database in the package manager console
+        public string Pin { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
