@@ -52,7 +52,7 @@ namespace AutomatedTellerMachine.Controllers
         }
         public ActionResult Foo()
         {
-            return View();
+            return View("About");
         }
 
         public ActionResult Serial(string lettercase)
